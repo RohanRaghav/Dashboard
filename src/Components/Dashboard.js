@@ -7,7 +7,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     // Fetch user data from the backend
-    axios.get('http://localhost:3001/api/users')
+    axios.get('https://serverhandle.vercel.app/api/users')
       .then((response) => {
         setUsers(response.data);
       })
