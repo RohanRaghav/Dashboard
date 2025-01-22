@@ -1,0 +1,11 @@
+.App {
+  text-align: center;
+}
+.membercontainer{
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+p{
+  text-align: left;
+}
