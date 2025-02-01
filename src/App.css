@@ -9,22 +9,17 @@
 p{
   text-align: left;
 }
-@media screen and (max-width: 768px) {
+/* For smaller screens like phones */
+@media (max-width: 767px) {
   .membercontainer {
-    flex-direction: column;
+    display: block;
   }
-
-  .membercontainer img {
-    width: 80px;
-    height: 80px;
+  .membercontainer div {
+    width: 100%;
   }
-
-  .membercontainer p {
-    font-size: 14px;
-  }
-
-  button {
-    padding: 8px 16px;
+  /* Adjust modal for smaller screens */
+  .modal-container {
+    max-width: 90%;
   }
 }
 
