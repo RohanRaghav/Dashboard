@@ -9,20 +9,12 @@
 p{
   text-align: left;
 }
-/* For smaller screens like phones */
-@media (max-width: 767px) {
-  .membercontainer {
-    display: block;
-  }
-  .membercontainer div {
-    width: 100%;
-  }
-  /* Adjust modal for smaller screens */
-  .modal-container {
-    max-width: 90%;
-  }
+.app{
+  background-image: url(/public/image.jpg);
+  background-repeat: no-repeat;
+  background-size:auto;
+  background-position: center;
 }
-
 
 .alignment {
   display: flex;
@@ -32,6 +24,25 @@ p{
   margin: 0 auto;
   padding: 40px;
   gap: 20px; /* Add spacing between form groups */
+}
+form{
+  position: relative;
+  background: rgba(255, 255, 255, 0.8); /* Light semi-transparent background */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px); /* Blurs the background behind the form */
+  -webkit-backdrop-filter: blur(8px); /* For Safari */
+  padding: 20px;
+  width: 50vw;
+  text-align: center;
+  z-index: 1;
+}
+.form-group {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  gap: 30px;
+  width: 100%; /* Stretch the group across the form width */
 }
 
 .form-group div {
