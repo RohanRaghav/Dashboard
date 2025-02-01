@@ -97,4 +97,7 @@ img {
   .form-group {
     flex-direction: column; /* Stack inputs on small screens */
   }
+  .overflowhandle{
+    overflow-y:auto;
+  }
 }

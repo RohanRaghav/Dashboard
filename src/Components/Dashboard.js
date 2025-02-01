@@ -87,6 +87,7 @@ const Dashboard = () => {
           }}
         >
           <div
+          className='overflowhandle'
             style={{
               backgroundColor: 'white',
               color: 'black',
