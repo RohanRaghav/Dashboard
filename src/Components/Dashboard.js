@@ -72,84 +72,94 @@ const Dashboard = () => {
 
       {selectedUser && (
         <div
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          backgroundColor: 'rgba(0, 0, 0, 0.8)',
+          color: 'white',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          zIndex: 1000,
+        }}
+      >
+        <div
           style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
+            backgroundColor: 'white',
+            color: 'black',
+            padding: '20px',
+            borderRadius: '10px',
+            textAlign: 'center',
+            maxWidth: '90vw',
             width: '100%',
-            height: '100%',
-            backgroundColor: 'rgba(0, 0, 0, 0.8)',
-            color: 'white',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            zIndex: 1000,
+            overflowY: 'auto',
+            maxHeight: '80vh', // Restrict the max height of modal content
           }}
         >
-          <div
-            style={{
-              backgroundColor: 'white',
-              color: 'black',
-              padding: '20px',
-              borderRadius: '10px',
-              textAlign: 'center',
-              maxWidth: '90vh',
-              width: '100%',
-              overflowY:"auto",
-            }}
-          >
-            <div className='membercontainer'>
-                <div>
-                <img
+          <div className='membercontainer' style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+            <div style={{ textAlign: 'center' }}>
+              <img
                 src={selectedUser.imageUrl}
                 alt="Profile"
-                style={{ width: '100px', height: '100px', borderRadius: '50%' }}
+                style={{
+                  width: '100px',
+                  height: '100px',
+                  borderRadius: '50%',
+                  marginBottom: '15px',
+                  objectFit: 'cover',
+                }}
               />
-                <h2>{selectedUser.fullName}</h2>
-            <p><strong>UID:</strong> {selectedUser.UID}</p>
-            <p><strong>Department:</strong> {selectedUser.department}</p>
-            <p><strong>Year:</strong> {selectedUser.year}</p>
-            <p><strong>Email:</strong> {selectedUser.email}</p>
-            <p><strong>Phone Number:</strong>{selectedUser.phoneNumber}</p>
+              <h2>{selectedUser.fullName}</h2>
+              <p><strong>UID:</strong> {selectedUser.UID}</p>
+              <p><strong>Department:</strong> {selectedUser.department}</p>
+              <p><strong>Year:</strong> {selectedUser.year}</p>
+              <p><strong>Email:</strong> {selectedUser.email}</p>
+              <p><strong>Phone Number:</strong> {selectedUser.phoneNumber}</p>
             </div>
-            <div>
-            <p><strong>Technical Skills:</strong> {formatArray(selectedUser.technicalSkills)}</p>
-            <p><strong>Soft Skills:</strong> {selectedUser.softSkills || 'Not provided'}</p>
-            <p><strong>Certifications:</strong> {selectedUser.certifications || 'Not provided'}</p>
-            <p><strong>Extracurricular Activities:</strong> {selectedUser.extracurricularActivities || 'Not provided'}</p>
-            <p><strong>Previous Positions:</strong> {selectedUser.previousPositions || 'Not provided'}</p>
-            <p><strong>Achievements:</strong> {selectedUser.achievements || 'Not provided'}</p>
-            <p><strong>Interests:</strong> {formatArray(selectedUser.interests)}</p>
-            <p><strong>Preferred Role:</strong> {selectedUser.preferredRole || 'Not provided'}</p>
-            <p><strong>Languages:</strong> {formatArray(selectedUser.languages)}</p>
-            <p><strong>Special Skills:</strong> {selectedUser.specialSkills || 'Not provided'}</p>
-            <p><strong>Suggestions:</strong> {selectedUser.suggestions || 'Not provided'}</p>
-            <p><strong>Feedback:</strong> {selectedUser.feedback || 'Not provided'}</p>
-                </div>
+      
+            <div style={{ textAlign: 'left' }}>
+              <p><strong>Technical Skills:</strong> {formatArray(selectedUser.technicalSkills)}</p>
+              <p><strong>Soft Skills:</strong> {selectedUser.softSkills || 'Not provided'}</p>
+              <p><strong>Certifications:</strong> {selectedUser.certifications || 'Not provided'}</p>
+              <p><strong>Extracurricular Activities:</strong> {selectedUser.extracurricularActivities || 'Not provided'}</p>
+              <p><strong>Previous Positions:</strong> {selectedUser.previousPositions || 'Not provided'}</p>
+              <p><strong>Achievements:</strong> {selectedUser.achievements || 'Not provided'}</p>
+              <p><strong>Interests:</strong> {formatArray(selectedUser.interests)}</p>
+              <p><strong>Preferred Role:</strong> {selectedUser.preferredRole || 'Not provided'}</p>
+              <p><strong>Languages:</strong> {formatArray(selectedUser.languages)}</p>
+              <p><strong>Special Skills:</strong> {selectedUser.specialSkills || 'Not provided'}</p>
+              <p><strong>Suggestions:</strong> {selectedUser.suggestions || 'Not provided'}</p>
+              <p><strong>Feedback:</strong> {selectedUser.feedback || 'Not provided'}</p>
             </div>
-            
-            <p>
-              <strong>CV/Portfolio:</strong>{' '}
-              <a href={selectedUser.cvPortfolioUrl} target="_blank" rel="noopener noreferrer">
-                View
-              </a>
-            </p>
-            <button
-              onClick={closeOverlay}
-              style={{
-                marginTop: '20px',
-                padding: '10px 20px',
-                backgroundColor: 'black',
-                color: 'white',
-                border: 'none',
-                borderRadius: '5px',
-                cursor: 'pointer',
-              }}
-            >
-              Close
-            </button>
           </div>
+      
+          <p>
+            <strong>CV/Portfolio:</strong>{' '}
+            <a href={selectedUser.cvPortfolioUrl} target="_blank" rel="noopener noreferrer" style={{ color: 'blue' }}>
+              View
+            </a>
+          </p>
+      
+          <button
+            onClick={closeOverlay}
+            style={{
+              marginTop: '20px',
+              padding: '10px 20px',
+              backgroundColor: 'black',
+              color: 'white',
+              border: 'none',
+              borderRadius: '5px',
+              cursor: 'pointer',
+            }}
+          >
+            Close
+          </button>
         </div>
+      </div>
+      
       )}
     </div>
   );
