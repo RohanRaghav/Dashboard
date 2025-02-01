@@ -111,26 +111,6 @@ const Dashboard = () => {
             <p><strong>Year:</strong> {selectedUser.year}</p>
             <p><strong>Email:</strong> {selectedUser.email}</p>
             <p><strong>Phone Number:</strong>{selectedUser.phoneNumber}</p>
-            <p><strong>LinkedIn:</strong>{' '}
-  <a 
-    href={selectedUser.socialMedia?.linkedIn || '#'} 
-    target="_blank" 
-    rel="noopener noreferrer" 
-    style={{ color: 'blue', textDecoration: 'underline' }}
-  >
-    {selectedUser.socialMedia?.linkedIn || 'Not provided'}
-  </a>
-</p>
-<p><strong>GitHub:</strong>{' '}
-  <a 
-    href={selectedUser.socialMedia?.github || '#'} 
-    target="_blank" 
-    rel="noopener noreferrer" 
-    style={{ color: 'blue', textDecoration: 'underline' }}
-  >
-    {selectedUser.socialMedia?.github || 'Not provided'}
-  </a>
-</p>
             </div>
             <div>
             <p><strong>Technical Skills:</strong> {formatArray(selectedUser.technicalSkills)}</p>
